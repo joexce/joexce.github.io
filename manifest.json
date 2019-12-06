@@ -1,7 +1,7 @@
 {
   "name": "Hello World",
   "short_name": "Hello",
-  "scope": "/app/",
+  "scope": "./app/index.html",
   "icons": [{
     "src": "sun.png",
       "sizes": "32x32",
