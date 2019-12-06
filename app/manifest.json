@@ -16,7 +16,12 @@
         "src": "sun-114x114.png",
           "sizes": "114x114",
           "type": "image/png"
-        }
+        },
+        {
+          "src": "sun-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+          }
   ],
   "lang": "en-US",
   "start_url": "index.html",
