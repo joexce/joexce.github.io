@@ -3,6 +3,20 @@
     <head>
         <title> issue maniac | xJOEx | issue will store to here </title>
     </head>
+    <script>
+        var txtFile = new XMLHttpRequest();
+       var allText = "file not found";
+       txtFile.onreadystatechange = function () {
+           if (txtFile.readyState === XMLHttpRequest.DONE && txtFile.status == 200) {
+               allText = txtFile.responseText;
+               allText = allText.split("\n").join("<br>");
+           }
+   
+           document.getElementById('md').innerHTML = allText;
+       }
+       txtFile.open("GET", 'wsl-vpn.md', true);
+       txtFile.send(null);
+   </script>
 
     <style>
         p {
@@ -13,7 +27,7 @@
             padding-top: 10px;
             font-family: monospace;
         }
-        .logs {
+        #md {
             margin-left: 10%;
             padding-top: 30px;
             font-family:'Courier New', Courier, monospace;
@@ -32,11 +46,6 @@
                 <p> Even NASA had a problem when they're trying to go to the moon, <br> so this is the logs or probably a books that have all the issue i've ever facing.</p>
             </div>
 
-            <div class="logs">
-                    <ul> <a href="errors/index.html"> WSL vpn not working</a> </ul>
-                    <ul> <a href="errors/wsl-vpn.md"> Dummy Link</a> </ul>
-                    <ul> <a href="errors/wsl-vpn.md"> Troubleshooting linux 20.04</a> </ul>
-                    <ul> <a href="errors/wsl-vpn.md"> How to update Raspberry pi</a> </ul>
-            </div>
+            <div id="md"> </div>
     </body>
 </html>
